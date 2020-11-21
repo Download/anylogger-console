@@ -1,0 +1,59 @@
+{
+  "name": "anylogger-console",
+  "version": "1.0.0",
+  "description": "Anylogger adapter for the console",
+  "src": "./anylogger-console.js",
+  "main": "./anylogger-console.cjs.js",
+  "iife": "./anylogger-console.iife.js",
+  "min": "./anylogger-console.min.js",
+  "spec": "./anylogger-console.spec.js",
+  "files": [
+    "anylogger-console.js",
+    "anylogger-console.cjs.js",
+    "anylogger-console.iife.js",
+    "anylogger-console.min.js",
+    "anylogger-console.spec.js",
+    "test.html"
+  ],
+  "unpkg": "anylogger-console.min.js",
+  "scripts": {
+    "build": "npm run test -s && npm run minify -s && npm run docs -s",
+    "docs": "cross-env NODE_ENV=production node build.js docs",
+    "minify": "cross-env NODE_ENV=production node build.js minify",
+    "package": "cross-env NODE_ENV=production rollup -c",
+    "prepare": "npm run build",
+    "test": "npm run package -s && mocha anylogger-console.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/download/anylogger-console.git"
+  },
+  "keywords": [
+    "anylogger",
+    "console",
+    "anylogger-console",
+    "log"
+  ],
+  "author": "Stijn de Witt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/download/anylogger-console/issues"
+  },
+  "homepage": "https://github.com/download/anylogger-console#readme",
+  "dependencies": {
+    "anylogger": "^1.0.6"
+  },
+  "peerDependencies": {
+    "anylogger": "^1.0.6"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
+    "gzip-size": "^6.0.0",
+    "mocha": "^8.2.1",
+    "rollup": "^2.33.3",
+    "rollup-plugin-re": "^1.0.7",
+    "sinon": "^9.2.1",
+    "uglify-js": "^3.11.6"
+  }
+}
