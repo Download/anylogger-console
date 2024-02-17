@@ -1,20 +1,20 @@
 import replace from 'rollup-plugin-re'
-import pkg from './package.json'
+import pkg from './package.json' assert { type: "json" }
 
 export default [
 	{
-		input: pkg.src,
+		input: pkg.main,
 		output: [
       // commonjs build
-			{ file: pkg.main,  format: 'cjs', strict: false },
+			{ file: pkg.cjs,  format: 'cjs', strict: false },
 		],
 		external: [ 'anylogger' ],
 	},
 	{
-		input: pkg.src,
+		input: pkg.main,
 		output: [
       // browser-friendly build
-			{ file: pkg.iife,  format: 'iife', strict: false, globals: { anylogger: 'anylogger', debug: 'debug' } },
+			{ file: pkg.iife,  format: 'iife', strict: false, globals: { anylogger: 'anylogger' } },
 		],
 		external: [ 'anylogger' ],
 		plugins: [

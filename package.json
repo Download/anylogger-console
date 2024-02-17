@@ -1,23 +1,38 @@
 {
   "name": "anylogger-console",
-  "version": "1.0.0",
+  "version": "1.1.0-beta.0",
+  "type": "module",
   "description": "Anylogger adapter for the console",
-  "src": "./anylogger-console.js",
-  "main": "./anylogger-console.cjs.js",
+  "exports": {
+    ".": {
+      "require": "./anylogger-console.cjs",
+      "import": "./anylogger-console.js"
+    }
+  },
+  "main": "./anylogger-console.js",
+  "src": "./anylogger-console.ts",
+  "cjs": "./anylogger-console.cjs",
   "iife": "./anylogger-console.iife.js",
   "min": "./anylogger-console.min.js",
   "spec": "./anylogger-console.spec.js",
   "files": [
-    "anylogger-console.js",
-    "anylogger-console.cjs.js",
+    "anylogger-console.cjs",
+    "anylogger-console.d.ts",
+    "anylogger-console.d.ts.map",
     "anylogger-console.iife.js",
+    "anylogger-console.js",
+    "anylogger-console.js.map",
     "anylogger-console.min.js",
     "anylogger-console.spec.js",
-    "test.html"
+    "anylogger-console.ts",
+    "LICENSE",
+    "README.md",
+    "tsconfig.json"
   ],
   "unpkg": "anylogger-console.min.js",
   "scripts": {
-    "build": "npm run test -s && npm run minify -s && npm run docs -s",
+    "build": "tsc && npm run test -s && npm run minify -s && npm run docs -s",
+    "clean": "rimraf anylogger-console.cjs anylogger-console.d.ts anylogger-console.d.ts.map anylogger-console.iife.js anylogger-console.js anylogger-console.js.map anylogger-console.min.js",
     "docs": "cross-env NODE_ENV=production node build.js docs",
     "minify": "cross-env NODE_ENV=production node build.js minify",
     "package": "cross-env NODE_ENV=production rollup -c",
@@ -40,20 +55,20 @@
     "url": "https://github.com/download/anylogger-console/issues"
   },
   "homepage": "https://github.com/download/anylogger-console#readme",
-  "dependencies": {
-    "anylogger": "^1.0.6"
-  },
   "peerDependencies": {
-    "anylogger": "^1.0.6"
+    "anylogger": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "cross-env": "^7.0.2",
-    "gzip-size": "^6.0.0",
-    "mocha": "^8.2.1",
-    "rollup": "^2.33.3",
+    "anylogger": "^1.1.0-beta.0",
+    "chai": "^5.1.0",
+    "cross-env": "^7.0.3",
+    "gzip-size": "^7.0.0",
+    "mocha": "^10.3.0",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.12.0",
     "rollup-plugin-re": "^1.0.7",
-    "sinon": "^9.2.1",
-    "uglify-js": "^3.11.6"
+    "sinon": "^17.0.1",
+    "typescript": "^5.3.3",
+    "uglify-js": "^3.17.4"
   }
 }
