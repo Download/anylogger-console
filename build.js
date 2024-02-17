@@ -45,8 +45,8 @@ var v = pkg.version
     fs.writeFileSync('README.md', readme, 'utf8')
     log.info('updated readme')
     var html = fs.readFileSync('test.html', 'utf-8')
-    html = html.replace(/anylogger-console \d(\d)?\.\d(\d)?\.\d(\d)?/g, `anylogger-console ${v}`)
-    html = html.replace(/anylogger\@\d(\d)?\.\d(\d)?\.\d(\d)?\//g, `anylogger@${av}/`)
+    html = html.replace(/anylogger-console \d(\d)?\.\d(\d)?\.\d(\d)?(-([a-zA-Z0-9\.])*)?/g, `anylogger-console ${v}`)
+    html = html.replace(/anylogger\@\d(\d)?\.\d(\d)?\.\d(\d)?(-([a-zA-Z0-9\.])*)?\//g, `anylogger@${av}/`)
     fs.writeFileSync('test.html', html, 'utf8')
     log.info('updated test.html')
   }
