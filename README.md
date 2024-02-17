@@ -3,7 +3,6 @@
 
 [![npm](https://img.shields.io/npm/v/anylogger-console.svg)](https://npmjs.com/package/anylogger-console)
 [![license](https://img.shields.io/npm/l/anylogger-console.svg)](https://opensource.org/licenses/MIT)
-[![travis](https://img.shields.io/travis/Download/anylogger-console.svg)](https://travis-ci.org/Download/anylogger-console)
 ![mind BLOWN](https://img.shields.io/badge/mind-BLOWN-ff69b4.svg)
 
 <sup><sub><sup><sub>.</sub></sup></sub></sup>
