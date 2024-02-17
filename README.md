@@ -1,4 +1,4 @@
-# anylogger-console <sub><sup>1.1.0-beta.0</sup></sub>
+# anylogger-console <sub><sup>1.1.0-beta.1</sup></sub>
 ### Anylogger adapter for the console
 
 [![npm](https://img.shields.io/npm/v/anylogger-console.svg)](https://npmjs.com/package/anylogger-console)
@@ -16,9 +16,9 @@ This package is meant for application projects that are using libraries using
 
 ## Download
 
-* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.0/anylogger-console.js)
+* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.1/anylogger-console.js)
   (fully commented source ~5kB)
-* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.0/anylogger-console.min.js)
+* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.1/anylogger-console.min.js)
   (minified 169 bytes, gzipped ~[152](#gzip-size) bytes)
 
 
@@ -27,7 +27,7 @@ This package is meant for application projects that are using libraries using
 *index.html*
 ```html
 <script src="https://unpkg.com/anylogger@1.1.0-beta.0/anylogger.min.js"></script>
-<script src="https://unpkg.com/anylogger-console@1.1.0-beta.0/"></script>
+<script src="https://unpkg.com/anylogger-console@1.1.0-beta.1/"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
