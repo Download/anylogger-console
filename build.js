@@ -2,8 +2,9 @@ import fs from 'fs'
 import UglifyJS from 'uglify-js'
 import { gzipSizeSync } from 'gzip-size'
 // be uber cool and use anylogger-console to print the logging in the build of anylogger-console :)
-import 'anylogger-console'
+import adapter from 'anylogger-console'
 import anylogger from 'anylogger'
+adapter(anylogger)
 var log = anylogger('anylogger-console')
 
 var [ processName, script, command, ...args ] = process.argv

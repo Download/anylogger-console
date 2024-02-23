@@ -1,18 +1,26 @@
 import anylogger, {
+  type AnyLogger,
   type Logger,
   type LogLevel,
-  type LogFunction
+  type LogFunction,
+  type Adapter,
 } from 'anylogger'
 
-// override anylogger.ext() to make it use the console
-anylogger.ext = (logger: LogFunction): Logger => {
-  var con = (typeof console !== 'undefined') && console
-  for (const level in anylogger.levels) {
-    // need to do some casting here as we are building the logger
-    (logger as Logger)[level as LogLevel] = ((
-      con && (con[level as LogLevel] || con.log) || (()=>{})
-    ) as LogFunction)
+const adapter: Adapter = (anylogger: AnyLogger) => {
+  // override anylogger.ext() to make it use the console
+  anylogger.ext = (logger: LogFunction): Logger => {
+    for (const level in anylogger.levels) {
+      // need to do some casting here as we are building the logger
+      (logger as Logger)[level as LogLevel] = (
+        ((console as any)[level as LogLevel] || console.log || (()=>{}))
+      )
+    }
+    (logger as Logger).enabledFor = () => true
+    return logger as Logger
   }
-  (logger as Logger).enabledFor = function(){return !0}
-  return logger as Logger
 }
+
+export default adapter
+
+// backward compat
+adapter(anylogger)

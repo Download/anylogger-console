@@ -1,4 +1,4 @@
-# anylogger-console <sub><sup>1.1.0-beta.4</sup></sub>
+# anylogger-console <sub><sup>1.1.0-beta.5</sup></sub>
 ### Anylogger adapter for the console
 
 [![npm](https://img.shields.io/npm/v/anylogger-console.svg)](https://npmjs.com/package/anylogger-console)
@@ -16,18 +16,22 @@ This package is meant for application projects that are using libraries using
 
 ## Download
 
-* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.4/anylogger-console.js)
-  (fully commented source ~5kB)
-* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.4/anylogger-console.min.js)
-  (minified 169 bytes, gzipped ~[152](#gzip-size) bytes)
+* [anylogger-console.ts](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.ts)
+  (typescript, fully commented source ~1kB)
+* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.js)
+  (javascript esm module ~.5kB)
+* [anylogger-console.cjs](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.cjs)
+  (javascript commonjs module ~.5kB)
+* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.min.js)
+  (minified 162 bytes, gzipped ~[143](#gzip-size) bytes)
 
 
 ## CDN
 
 *index.html*
 ```html
-<script src="https://unpkg.com/anylogger@1.1.0-beta.0/anylogger.min.js"></script>
-<script src="https://unpkg.com/anylogger-console@1.1.0-beta.4/"></script>
+<script src="https://unpkg.com/anylogger@1.1.0-beta.1/anylogger.min.js"></script>
+<script src="https://unpkg.com/anylogger-console@1.1.0-beta.5/"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
@@ -47,23 +51,28 @@ This package is meant for application projects. If you are writing a library to
 be NPM installed into some other project, most likely you should not include
 any adapter, but instead just use `anylogger` directly.
 
-The `anylogger-console` adapter will modify the `anylogger` factory in such a
-way that the loggers it creates will be logging to the console.
+The `anylogger-console` adapter will modify the default noop extension
+on `anylogger.ext` in such a way that the loggers it creates will be
+logging to the console.
 
 To activate the adapter, include it in your application entry point.
-
-### Require
-
-*main.js*
-```js
-require('anylogger-console')
-```
 
 ### Import
 
 *main.js*
 ```js
-import 'anylogger-console'
+import adapter from 'anylogger-console'
+import anylogger from 'anylogger'
+adapter(anylogger)
+```
+
+### Require
+
+*main.js*
+```js
+const adapter = require('anylogger-console')
+const anylogger = require('anylogger')
+adapter(anylogger)
 ```
 
 ## Logging in the application project
