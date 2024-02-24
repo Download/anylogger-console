@@ -1,4 +1,4 @@
-# anylogger-console <sub><sup>1.1.0-beta.5</sup></sub>
+# anylogger-console <sub><sup>1.1.0-beta.6</sup></sub>
 ### Anylogger adapter for the console
 
 [![npm](https://img.shields.io/npm/v/anylogger-console.svg)](https://npmjs.com/package/anylogger-console)
@@ -16,22 +16,22 @@ This package is meant for application projects that are using libraries using
 
 ## Download
 
-* [anylogger-console.ts](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.ts)
+* [anylogger-console.ts](https://unpkg.com/anylogger-console@1.1.0-beta.6/anylogger-console.ts)
   (typescript, fully commented source ~1kB)
-* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.js)
+* [anylogger-console.js](https://unpkg.com/anylogger-console@1.1.0-beta.6/anylogger-console.js)
   (javascript esm module ~.5kB)
-* [anylogger-console.cjs](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.cjs)
+* [anylogger-console.cjs](https://unpkg.com/anylogger-console@1.1.0-beta.6/anylogger-console.cjs)
   (javascript commonjs module ~.5kB)
-* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.5/anylogger-console.min.js)
-  (minified 162 bytes, gzipped ~[143](#gzip-size) bytes)
+* [anylogger-console.min.js](https://unpkg.com/anylogger-console@1.1.0-beta.6/anylogger-console.min.js)
+  (minified 187 bytes, gzipped ~[156](#gzip-size) bytes)
 
 
 ## CDN
 
 *index.html*
 ```html
-<script src="https://unpkg.com/anylogger@1.1.0-beta.1/anylogger.min.js"></script>
-<script src="https://unpkg.com/anylogger-console@1.1.0-beta.5/"></script>
+<script src="https://unpkg.com/anylogger@1.1.0-beta.4/anylogger.min.js"></script>
+<script src="https://unpkg.com/anylogger-console@1.1.0-beta.6/"></script>
 <script>(function(){ // IIFE
   var log = anylogger('index.html')
   log.info('Logging is simple!')
